@@ -252,10 +252,14 @@ const Home: NextPage = () => {
 
   if (!mounted) {
     return (
-      <div className="flex items-center justify-center grow pt-10 pb-10">
-        <div className="w-full max-w-2xl px-5">
-          <h1 className="text-center text-4xl font-bold mb-8">Generate Miniapp</h1>
-          <div className="text-center">Loading...</div>
+      <div className="flex items-center justify-center grow py-10">
+        <div className="w-full max-w-2xl px-4">
+          <div className="rounded-3xl border border-base-300 bg-base-100/80 px-6 py-8 shadow-lg">
+            <h1 className="text-center text-3xl font-semibold tracking-tight text-base-content mb-3">
+              Generate Viniapp Miniapp
+            </h1>
+            <p className="text-center text-sm text-base-content/60">Loading your builder studio...</p>
+          </div>
         </div>
       </div>
     );
@@ -263,84 +267,102 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <div className="flex items-center justify-center grow pt-10 pb-10">
-        <div className="w-full max-w-2xl px-5">
-          <h1 className="text-center text-4xl font-bold mb-8">Generate Miniapp</h1>
-
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Name Input */}
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium mb-2">
-                Name
-              </label>
-              <input
-                id="name"
-                type="text"
-                value={name}
-                onChange={e => setName(e.target.value)}
-                className="input input-bordered w-full"
-                placeholder="Enter miniapp name"
-              />
+      <div className="flex items-center justify-center grow py-10">
+        <div className="w-full max-w-2xl px-4">
+          <div className="rounded-3xl border border-base-300 bg-base-100/90 px-6 py-8 shadow-xl">
+            <div className="mb-6 text-center">
+              <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.16em] text-primary">
+                Viniapp Mini Builder
+              </div>
+              <h1 className="mt-4 text-4xl font-semibold tracking-tight text-base-content">Generate Viniapp Miniapp</h1>
+              <p className="mt-2 text-sm text-base-content/60">
+                Describe your idea, drop a logo, and we&apos;ll spin up the onchain miniapp for you.
+              </p>
             </div>
 
-            {/* Logo File Input */}
-            <div>
-              <label htmlFor="logo" className="block text-sm font-medium mb-2">
-                Logo
-              </label>
-              <input
-                id="logo"
-                type="file"
-                accept="image/*"
-                onChange={handleLogoChange}
-                className="file-input file-input-bordered w-full"
-              />
-              {logoPreview && (
-                <div className="mt-4">
-                  <img src={logoPreview} alt="Logo preview" className="max-w-xs max-h-48 rounded-2xl object-contain" />
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Name Input */}
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium mb-2">
+                  Name
+                </label>
+                <input
+                  id="name"
+                  type="text"
+                  value={name}
+                  onChange={e => setName(e.target.value)}
+                  className="input input-bordered w-full"
+                  placeholder="Enter miniapp name"
+                />
+              </div>
+
+              {/* Logo File Input */}
+              <div>
+                <label htmlFor="logo" className="block text-sm font-medium mb-2">
+                  Logo
+                </label>
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+                  <input
+                    id="logo"
+                    type="file"
+                    accept="image/*"
+                    onChange={handleLogoChange}
+                    className="file-input file-input-bordered w-full sm:max-w-xs"
+                  />
+                  {logoPreview && (
+                    <div className="mx-auto mt-2 sm:mt-0 sm:ml-4">
+                      <div className="relative rounded-2xl border border-base-300 bg-base-100 p-1 shadow-md">
+                        <img
+                          src={logoPreview}
+                          alt="Logo preview"
+                          className="max-h-24 w-auto rounded-xl object-contain"
+                        />
+                      </div>
+                    </div>
+                  )}
                 </div>
-              )}
-            </div>
+              </div>
 
-            {/* Description TextArea */}
-            <div>
-              <label htmlFor="description" className="block text-sm font-medium mb-2">
-                Describe what you want to build
-              </label>
-              <textarea
-                id="description"
-                value={description}
-                onChange={e => setDescription(e.target.value)}
-                className="textarea textarea-bordered w-full min-h-32 rounded-2xl"
-                placeholder="Describe your miniapp idea..."
-              />
-            </div>
+              {/* Description TextArea */}
+              <div>
+                <label htmlFor="description" className="block text-sm font-medium mb-2">
+                  Describe what you want to build
+                </label>
+                <textarea
+                  id="description"
+                  value={description}
+                  onChange={e => setDescription(e.target.value)}
+                  className="textarea textarea-bordered w-full min-h-32 rounded-2xl"
+                  placeholder="Describe your miniapp idea..."
+                />
+              </div>
 
-            {/* Submit Button */}
-            <div className="flex flex-col items-center space-y-2">
-              <button
-                type="submit"
-                className="btn btn-primary btn-lg w-full max-w-md"
-                disabled={isMining || isApproving || isConfirming || !address}
-              >
-                {isApproving ? (
-                  <>
-                    <span className="loading loading-spinner loading-xs"></span>
-                    Approving...
-                  </>
-                ) : isMining || isConfirming ? (
-                  <>
-                    <span className="loading loading-spinner loading-xs"></span>
-                    Processing...
-                  </>
-                ) : (
-                  "Let's go"
-                )}
-              </button>
-              <p className="text-sm text-base-content/70">Cost 20 USDC</p>
-              {txHash && <p className="text-xs text-base-content/50 mt-2 break-all">Tx: {txHash}</p>}
-            </div>
-          </form>
+              {/* Submit Button */}
+              <div className="flex flex-col items-center space-y-2">
+                <button
+                  type="submit"
+                  className="btn btn-primary btn-lg w-full max-w-md"
+                  disabled={isMining || isApproving || isConfirming || !address}
+                >
+                  {isApproving ? (
+                    <>
+                      <span className="loading loading-spinner loading-xs"></span>
+                      Approving...
+                    </>
+                  ) : isMining || isConfirming ? (
+                    <>
+                      <span className="loading loading-spinner loading-xs"></span>
+                      Processing...
+                    </>
+                  ) : (
+                    "Let's go"
+                  )}
+                </button>
+                <p className="text-sm text-base-content/70">Cost 20 USDC</p>
+                {txHash && <p className="text-xs text-base-content/50 mt-2 break-all">Tx: {txHash}</p>}
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </>
