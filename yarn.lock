@@ -2085,6 +2085,31 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@hpke/chacha20poly1305@npm:^1.7.1":
+  version: 1.7.1
+  resolution: "@hpke/chacha20poly1305@npm:1.7.1"
+  dependencies:
+    "@hpke/common": ^1.8.1
+  checksum: 2263b3324404039af9415c2d79f5dc995bcaf621aeb870ae222eb1586d7a10adffb4b802e1ebf44607953ecb4c3ec6f912c066662cc51688774ba53b8bab977c
+  languageName: node
+  linkType: hard
+
+"@hpke/common@npm:^1.8.1":
+  version: 1.8.1
+  resolution: "@hpke/common@npm:1.8.1"
+  checksum: e29309ce313dc8fab05408ef0b9969cf3f8cdbfc88f20a3b303e0e5ea5118bbac08f79680003624cbcb01e4414abd713ac3ab23770989b80a5a802bce4f07a3a
+  languageName: node
+  linkType: hard
+
+"@hpke/core@npm:^1.7.4":
+  version: 1.7.5
+  resolution: "@hpke/core@npm:1.7.5"
+  dependencies:
+    "@hpke/common": ^1.8.1
+  checksum: ea22af97bcab01e48a415f8d6c7291e9672994c13cb320912a523b1078e51c0a5f53d1d5e0d5e50c34a45f8e71454a7bf117deee74541ce3fbf7a2e871f1ce05
+  languageName: node
+  linkType: hard
+
 "@humanfs/core@npm:^0.19.1":
   version: 0.19.1
   resolution: "@humanfs/core@npm:0.19.1"
@@ -4034,6 +4059,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@privy-io/node@npm:^0.6.0":
+  version: 0.6.0
+  resolution: "@privy-io/node@npm:0.6.0"
+  dependencies:
+    "@hpke/chacha20poly1305": ^1.7.1
+    "@hpke/core": ^1.7.4
+    "@noble/curves": ^1.9.7
+    "@noble/hashes": ^1.8.0
+    "@scure/base": ^1.2.5
+    canonicalize: ^2.1.0
+    jose: ^6.1.0
+    lru-cache: ^11.1.0
+    svix: ">=1.29.0 <= 1.37.0 || ^1.40.0"
+  peerDependencies:
+    viem: ^2.24.1
+  peerDependenciesMeta:
+    viem:
+      optional: true
+  checksum: 50f88c48dcec68ebf0f089463b173babef4eeba3b5a30857997726c333e309c175479249cda248e27dc74a692f55121ea2bcd390516aaf62d2f1d139c2353177
+  languageName: node
+  linkType: hard
+
 "@protobufjs/aspromise@npm:^1.1.1, @protobufjs/aspromise@npm:^1.1.2":
   version: 1.1.2
   resolution: "@protobufjs/aspromise@npm:1.1.2"
@@ -4516,7 +4563,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@scure/base@npm:^1.1.3, @scure/base@npm:~1.2.2, @scure/base@npm:~1.2.4, @scure/base@npm:~1.2.5":
+"@scure/base@npm:^1.1.3, @scure/base@npm:^1.2.5, @scure/base@npm:~1.2.2, @scure/base@npm:~1.2.4, @scure/base@npm:~1.2.5":
   version: 1.2.6
   resolution: "@scure/base@npm:1.2.6"
   checksum: 1058cb26d5e4c1c46c9cc0ae0b67cc66d306733baf35d6ebdd8ddaba242b80c3807b726e3b48cb0411bb95ec10d37764969063ea62188f86ae9315df8ea6b325
@@ -4665,6 +4712,7 @@ __metadata:
     "@heroicons/react": ~2.1.5
     "@ponder/client": ^0.13.0
     "@ponder/react": ^0.13.0
+    "@privy-io/node": ^0.6.0
     "@rainbow-me/rainbowkit": 2.2.8
     "@scaffold-ui/components": ^0.1.3
     "@scaffold-ui/debug-contracts": ^0.1.2
@@ -4979,6 +5027,13 @@ __metadata:
   version: 0.20.2
   resolution: "@solidity-parser/parser@npm:0.20.2"
   checksum: 5623e9b5863d59aab50f0fc98fe81a2b693e64feb29e2cf011a826d0e89374bbb6dfaf3fce48ac5c462251c792042f47805ba2004993182b717314e7d7292cd4
+  languageName: node
+  linkType: hard
+
+"@stablelib/base64@npm:^1.0.0":
+  version: 1.0.1
+  resolution: "@stablelib/base64@npm:1.0.1"
+  checksum: 3ef4466d1d6889ac3fc67407bc21aa079953981c322eeca3b29f426d05506c63011faab1bfc042d7406e0677a94de6c9d2db2ce079afdd1eccae90031bfb5859
   languageName: node
   linkType: hard
 
@@ -8080,6 +8135,15 @@ __metadata:
   version: 1.0.30001756
   resolution: "caniuse-lite@npm:1.0.30001756"
   checksum: abcbb01eceb921f3462721792ede7ab9dc95eb676e2f6873837ebf5c163f5fe74a629de20b56b8bd10147af2ba255a608d422e72597149e19c91b9b760593bb6
+  languageName: node
+  linkType: hard
+
+"canonicalize@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "canonicalize@npm:2.1.0"
+  bin:
+    canonicalize: bin/canonicalize.js
+  checksum: deffa7f0b97004e5888442b9a122b3bd89ccc20a3293dd2ed0c704a26020e1c92f8fab31a7d89e02d71be6e4be025a75482c0a839baac930c383c186752e7502
   languageName: node
   linkType: hard
 
@@ -11197,6 +11261,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fast-sha256@npm:^1.3.0":
+  version: 1.3.0
+  resolution: "fast-sha256@npm:1.3.0"
+  checksum: 2b0bea7d3a9955e67abd2d3fbef4ce57f7dbb75708fc206d14973bd1d97aaf35b5c0a59c1d65be6f755df43d73b7657b9eac4fb3c2d58e6849966db1ef1fa186
+  languageName: node
+  linkType: hard
+
 "fast-stable-stringify@npm:^1.0.0":
   version: 1.0.0
   resolution: "fast-stable-stringify@npm:1.0.0"
@@ -13447,6 +13518,13 @@ __metadata:
   version: 5.10.0
   resolution: "jose@npm:5.10.0"
   checksum: e80965ef3ab47baafac3517f53fa9c74b948b57690de524f51320c314cd545ef51ec7b18761605d58fb5965b7c5e12b2bb6ddae87a6ccf55e3f4ad077347d8d7
+  languageName: node
+  linkType: hard
+
+"jose@npm:^6.1.0":
+  version: 6.1.2
+  resolution: "jose@npm:6.1.2"
+  checksum: 3dae4e71e3efd4b26468b903a750465300bd99afbd6de617a01cdceb7f70b04320fc168caf71f692a3d2de597fbc0d0ec839a87be78ad654c7c9d46b1b1d9665
   languageName: node
   linkType: hard
 
@@ -18787,6 +18865,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"svix@npm:>=1.29.0 <= 1.37.0 || ^1.40.0":
+  version: 1.81.0
+  resolution: "svix@npm:1.81.0"
+  dependencies:
+    "@stablelib/base64": ^1.0.0
+    fast-sha256: ^1.3.0
+    uuid: ^10.0.0
+  checksum: 8f6afe411a0003ff0046c9e7f5a0bfe6c59ecc352308017f5282bf77d41dc6b4e5ef2387b8bf89f91e463b6fbc0caecb7645c0bf28b3b7a63f90168889e7141d
+  languageName: node
+  linkType: hard
+
 "synckit@npm:^0.11.0":
   version: 0.11.11
   resolution: "synckit@npm:0.11.11"
@@ -19968,6 +20057,15 @@ __metadata:
   bin:
     uuid: ./bin/uuid
   checksum: 8793629d2799f500aeea9fcd0aec6c4e9fbcc4d62ed42159ad96be345c3fffac1bbf61a23e18e2782600884fee05e6d4012ce4b70d0037c8e987533ae6a77870
+  languageName: node
+  linkType: hard
+
+"uuid@npm:^10.0.0":
+  version: 10.0.0
+  resolution: "uuid@npm:10.0.0"
+  bin:
+    uuid: dist/bin/uuid
+  checksum: 4b81611ade2885d2313ddd8dc865d93d8dccc13ddf901745edca8f86d99bc46d7a330d678e7532e7ebf93ce616679fb19b2e3568873ac0c14c999032acb25869
   languageName: node
   linkType: hard
 
