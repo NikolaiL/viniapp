@@ -358,7 +358,7 @@ const Home: NextPage = () => {
                     "Let's go"
                   )}
                 </button>
-                <p className="text-sm text-base-content/70">Cost 20 USDC</p>
+                <p className="text-sm text-base-content/70">Best way to spend your 20 USDC</p>
                 {txHash && <p className="text-xs text-base-content/50 mt-2 break-all">Tx: {txHash}</p>}
               </div>
             </form>
