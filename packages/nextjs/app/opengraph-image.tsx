@@ -3,7 +3,6 @@ import { NextResponse } from "next/server";
 import { readFile } from "fs/promises";
 import { gql, request } from "graphql-request";
 import { join } from "path";
-import { formatEther } from "viem";
 
 export const runtime = "nodejs";
 export const alt = "Greetings";
@@ -88,11 +87,6 @@ export default async function Image() {
   const walletAddress = greeting.setterId;
   const isPremium = greeting.premium;
   // Handle value as string or bigint from GraphQL
-  const value = greeting.value
-    ? typeof greeting.value === "string"
-      ? BigInt(greeting.value)
-      : greeting.value
-    : BigInt(0);
 
   // Success color from global.css
   const successColor = "#34eeb6";
